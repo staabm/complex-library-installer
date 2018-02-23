@@ -21,7 +21,7 @@ class LibraryInstaller extends BaseInstaller
             );
         }
 
-        return 'vendor/plugins/'.$package->getPrettyName();
+        return 'vendor/plugins/'.substr($package->getPrettyName(), 8);
     }
 
     /**
