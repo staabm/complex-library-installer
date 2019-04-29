@@ -20,8 +20,23 @@ class LibraryInstaller extends BaseInstaller
                 .'"complex/"'
             );
         }
+        
+        $packageName = substr($package->getPrettyName(), 8);
+        
+        // we have some packages which casing is important in the filesystem for BC reasons.
+        // since we had to adjust package-names for composer 2.0 to be lower case, we map back to the BC friendly name here
+        $bcMap = array(
+            'clxmobilenet' => 'clxMobileNet',
+            'clxmobilenetportable' => 'clxMobileNetPortable',
+            'ebayman' => 'eBayMan',
+            'mobisapi' => 'MobisApi',
+        );
+        
+        if (isset($bcMap[$packageName])) {
+            $packageName = $bcMap[$packageName];
+        }
 
-        return 'vendor/plugins/'.substr($package->getPrettyName(), 8);
+        return 'vendor/plugins/'. $packageName;
     }
 
     /**
