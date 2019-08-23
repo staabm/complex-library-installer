@@ -23,6 +23,14 @@ class LibraryInstaller extends BaseInstaller
         
         $packageName = substr($package->getPrettyName(), 8);
         
+        if ($packageName == 'moxiemanager') {
+            $parentProject = basename(dirname(__DIR__,4 ));
+            if (strpos($parentProject, 'rocket') !== false) {
+                return 'builtin/public/js/tiny_mce4/plugins/moxiemanager';
+            }
+            return 'vendor/plugins/rocket/builtin/public/js/tiny_mce4/plugins/moxiemanager';
+        }
+        
         // we have some packages which casing is important in the filesystem for BC reasons.
         // since we had to adjust package-names for composer 2.0 to be lower case, we map back to the BC friendly name here
         $bcMap = array(
