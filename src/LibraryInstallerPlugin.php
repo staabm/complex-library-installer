@@ -13,4 +13,12 @@ class LibraryInstallerPlugin implements PluginInterface
         $installer = new LibraryInstaller($io, $composer);
         $composer->getInstallationManager()->addInstaller($installer);
     }
+    
+    public function deactivate(Composer $composer, IOInterface $io) {
+        // for plugin 2.0 compat
+    }
+    
+    public function uninstall(Composer $composer, IOInterface $io) {
+        // for plugin 2.0 compat
+    }
 }
