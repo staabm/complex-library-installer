@@ -37,6 +37,7 @@ class LibraryInstaller extends BaseInstaller
             'clxmobilenet' => 'clxMobileNet',
             'clxmobilenetportable' => 'clxMobileNetPortable',
             'clxbackendcms' => 'clxBackendCms',
+            'clxfrontendcms' => 'clxFrontendCms',
             'ebayman' => 'eBayMan',
             'mobisapi' => 'MobisApi',
         );
