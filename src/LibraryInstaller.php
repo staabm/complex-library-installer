@@ -36,8 +36,6 @@ class LibraryInstaller extends BaseInstaller
         $bcMap = array(
             'clxmobilenet' => 'clxMobileNet',
             'clxmobilenetportable' => 'clxMobileNetPortable',
-            'clxbackendcms' => 'clxBackendCms',
-            'clxfrontendcms' => 'clxFrontendCms',
             'ebayman' => 'eBayMan',
             'mobisapi' => 'MobisApi',
         );
