@@ -26,9 +26,9 @@ class LibraryInstaller extends BaseInstaller
         if ($packageName == 'moxiemanager') {
             $parentProject = basename(dirname(__DIR__,4 ));
             if (strpos($parentProject, 'rocket') !== false) {
-                return realpath('builtin/public/js/tiny_mce4/plugins/moxiemanager');
+                return realpath($this->vendorDir .'/../builtin/public/js/tiny_mce4/plugins/moxiemanager');
             }
-            return realpath('vendor/plugins/rocket/builtin/public/js/tiny_mce4/plugins/moxiemanager');
+            return realpath($this->vendorDir .'/plugins/rocket/builtin/public/js/tiny_mce4/plugins/moxiemanager');
         }
         
         // we have some packages which casing is important in the filesystem for BC reasons.
@@ -46,7 +46,7 @@ class LibraryInstaller extends BaseInstaller
             $packageName = $bcMap[$packageName];
         }
 
-        return realpath('vendor/plugins/'. $packageName);
+        return realpath($this->vendorDir .'/plugins/'. $packageName);
     }
 
     /**
