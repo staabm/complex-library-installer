@@ -25,10 +25,12 @@ class LibraryInstaller extends BaseInstaller
         
         if ($packageName == 'moxiemanager') {
             $parentProject = basename(dirname(__DIR__,4 ));
-            if (strpos($parentProject, 'rocket') !== false) {
-                return $this->vendorDir .'/../builtin/public/js/tiny_mce4/plugins/moxiemanager';
+
+            if (strpos(strtolower($parentProject), 'clxfrontendcms') !== false) {
+                return $this->vendorDir .'/../public/js/tinymce/plugins/moxiemanager';
             }
-            return $this->vendorDir .'/plugins/rocket/builtin/public/js/tiny_mce4/plugins/moxiemanager';
+
+            return $this->vendorDir .'/plugins/clxFrontendCms/public/js/tinymce/plugins/moxiemanager';
         }
         
         // we have some packages which casing is important in the filesystem for BC reasons.
